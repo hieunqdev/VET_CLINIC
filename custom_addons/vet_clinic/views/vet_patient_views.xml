@@ -1,0 +1,46 @@
+<odoo>
+    <record id="view_vet_patient_form" model="ir.ui.view">
+        <field name="name">vet.patient.form</field>
+        <field name="model">vet.patient</field>
+        <field name="arch" type="xml">
+            <form string="Thú cưng">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="species"/>
+                        <field name="breed"/>
+                        <field name="gender"/>
+                        <field name="dob"/>
+                        <field name="color"/>
+                        <field name="owner_id"/>
+                        <field name="image" widget="image"/>
+                    </group>
+                    <notebook>
+                        <page string="Hồ sơ khám bệnh">
+                            <field name="medical_record_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+<!--                                    <field name="date"/>-->
+<!--                                    <field name="state"/>-->
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_vet_patient_tree" model="ir.ui.view">
+        <field name="name">vet.patient.tree</field>
+        <field name="model">vet.patient</field>
+        <field name="arch" type="xml">
+            <list string="Danh sách thú cưng">
+                <field name="name"/>
+                <field name="species"/>
+                <field name="gender"/>
+                <field name="owner_id"/>
+            </list>
+        </field>
+    </record>
+</odoo>
