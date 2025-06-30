@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="advanced_vet_clinic_staff">
+            <field name="name">Quản lý phòng khám</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record model="res.groups" id="group_staff_receptionist">
+            <field name="name">Lễ tân</field>
+            <field name="category_id" ref="advanced_vet_clinic_staff"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record model="res.groups" id="group_staff_doctor">
+            <field name="name">Bác sĩ thú y</field>
+            <field name="category_id" ref="advanced_vet_clinic_staff"/>
+            <field name="implied_ids" eval="[(4, ref('group_staff_receptionist'))]"/>
+        </record>
+
+        <record model="res.groups" id="group_staff_manager">
+            <field name="name">Quản lý phòng khám</field>
+            <field name="category_id" ref="advanced_vet_clinic_staff"/>
+            <field name="implied_ids" eval="[(4, ref('group_staff_doctor'))]"/>
+        </record>
+    </data>
+</odoo>
