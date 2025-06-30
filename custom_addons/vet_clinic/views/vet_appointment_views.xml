@@ -4,6 +4,9 @@
         <field name="model">vet.appointment</field>
         <field name="arch" type="xml">
             <form string="Lịch hẹn khám bệnh">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="name" readonly="1"/>

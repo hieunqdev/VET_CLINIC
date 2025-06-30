@@ -14,8 +14,10 @@
     'author': 'Hiếu Dev',
     'website': '',
     'category': 'Healthcare',
-    'depends': ['base', 'sale', 'account', 'stock', 'point_of_sale', 'website'],
+    'depends': ['base', 'sale', 'account', 'stock', 'point_of_sale', 'website', 'contacts'],
     'data': [
+        'security/vet_clinic_security.xml',
+        'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',
         'views/vet_menus.xml',
         'views/vet_patient_views.xml',
