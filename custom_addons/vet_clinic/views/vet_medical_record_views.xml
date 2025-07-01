@@ -5,9 +5,12 @@
         <field name="arch" type="xml">
             <form string="Hồ sơ khám bệnh">
                 <header>
-                    <button name="action_confirm" type="object" string="Xác nhận"/>
-                    <button name="action_done" type="object" string="Hoàn thành"/>
-                    <button name="action_create_invoice" type="object" string="Tạo hóa đơn"/>
+                    <button name="action_confirm" type="object" string="Xác nhận"
+                    invisible="state not in ['draft']"/>
+                    <button name="action_done" type="object" string="Hoàn thành"
+                    invisible="state not in ['confirmed']"/>
+                    <button name="action_create_invoice" type="object" string="Tạo hóa đơn"
+                    invisible="state not in ['done']"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done,invoiced"/>
                 </header>
                 <sheet>
