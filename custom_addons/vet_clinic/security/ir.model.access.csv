@@ -16,3 +16,5 @@ access_receptionist_vet_invoice,vet.invoice,model_vet_invoice,vet_clinic.group_s
 access_receptionist_vet_medical_record,vet.medical.record,model_vet_medical_record,vet_clinic.group_staff_receptionist,1,0,1,0
 access_receptionist_vet_patient,vet.patient,model_vet_patient,vet_clinic.group_staff_receptionist,1,0,1,0
 access_receptionist_vet_service,vet.service,model_vet_service,vet_clinic.group_staff_receptionist,1,0,1,0
+
+access_doctor_vet_medical_record_invoice_wizard,vet.medical.record.invoice.wizard,model_vet_medical_record_invoice_wizard,vet_clinic.group_staff_doctor,1,1,1,1

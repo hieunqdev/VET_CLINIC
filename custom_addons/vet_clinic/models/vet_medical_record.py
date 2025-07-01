@@ -31,13 +31,13 @@ class VetMedicalRecord(models.Model):
     def action_confirm(self):
         for record in self:
             if record.state != 'draft':
-                raise UserError("Chỉ có thể xác nhận khi trạng thái là 'draft'")
+                raise UserError("Chỉ có thể xác nhận khi trạng thái là 'Dự thảo'")
         self.write({'state': 'confirmed'})
 
     def action_done(self):
         for record in self:
-            if record.state != "Chỉ có thể xác nhận khi trạng thái là 'done'":
-                raise UserError()
+            if record.state != 'confirmed':
+                raise UserError("Chỉ có thể xác nhận khi trạng thái là 'Đã xác nhận'")
         self.write({'state': 'done'})
 
     def action_create_invoice(self):
@@ -45,8 +45,8 @@ class VetMedicalRecord(models.Model):
             raise UserError('Chưa chọn dịch vụ để tạo hóa đơn.')
 
         for record in self:
-            if record.state != 'confirmed':
-                raise UserError("Chỉ có thể xác nhận khi trạng thái là 'confirmed'")
+            if record.state != 'done':
+                raise UserError("Chỉ có thể xác nhận khi trạng thái là 'Đã hoàn thành'")
 
         return {
             'type': 'ir.actions.act_window',

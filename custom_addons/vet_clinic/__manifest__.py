@@ -20,10 +20,12 @@
         'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',
         'views/vet_menus.xml',
+        'views/vet_service_views.xml',
         'views/vet_patient_views.xml',
         'views/vet_appointment_views.xml',
         'views/vet_medical_record_views.xml',
         'views/vet_invoice_views.xml',
+        'views/s_account_journal_views.xml',
         'wizard/medical_invoice_wizard_view.xml',
     ],
     'assets': {
