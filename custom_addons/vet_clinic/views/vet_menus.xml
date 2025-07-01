@@ -1,0 +1,17 @@
+<odoo>
+    <menuitem id="vet_clinic_main_menu" name="Phòng Khám Thú Y" sequence="10"
+    groups="vet_clinic.group_staff_receptionist"/>
+
+    <menuitem id="vet_patient_menu" name="Thú Cưng" parent="vet_clinic_main_menu" sequence="1"
+    groups="vet_clinic.group_staff_receptionist"/>
+
+    <record id="action_vet_patient" model="ir.actions.act_window">
+        <field name="name">Thú Cưng</field>
+        <field name="res_model">vet.patient</field>
+        <field name="view_mode">list,form</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+
+    <menuitem id="vet_patient_menu_item" name="Quản lý Thú Cưng" parent="vet_patient_menu" action="action_vet_patient"
+    groups="vet_clinic.group_staff_receptionist"/>
+</odoo>
